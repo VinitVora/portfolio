@@ -472,7 +472,7 @@ const Home: React.FC = () => {
               </Description>
 
               <ActionButtons variants={itemVariants}>
-                <Button as={Link} to="/projects" variant="primary" size="lg">
+                <Button as={Link} to="/case-studies" variant="primary" size="lg">
                   View Case Studies
                 </Button>
                 <Button as={Link} to="/contact" variant="outline" size="lg">
