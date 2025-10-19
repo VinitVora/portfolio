@@ -893,7 +893,7 @@ const Projects: React.FC = () => {
             <SearchContainer variants={itemVariants}>
               <SearchInput
                 type="text"
-                placeholder="🔍 Search projects..."
+                placeholder="🔍   Search Case Studies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />

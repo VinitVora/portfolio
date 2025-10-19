@@ -207,11 +207,10 @@ interface NavItem {
 const navItems: NavItem[] = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
-  { path: '/projects', label: 'Case Studies' },
+  { label: 'Case Studies', path: '/case-studies' },
   // { path: '', label: 'Blog', external: true },
   { path: '/contact', label: 'Contact' }
 ];
-
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);

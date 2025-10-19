@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Button } from '../styles/GlobalStyle';
+import React, { useState, useEffect, useCallback } from "react";
+import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Button } from "../styles/GlobalStyle";
 
 const Overlay = styled(motion.div)`
   position: fixed;
@@ -20,7 +20,11 @@ const Overlay = styled(motion.div)`
 `;
 
 const PopupContainer = styled(motion.div)`
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.98) 0%,
+    rgba(30, 41, 59, 0.98) 100%
+  );
   border: 2px solid var(--accent-primary);
   border-radius: var(--radius-2xl);
   padding: var(--spacing-10);
@@ -28,12 +32,12 @@ const PopupContainer = styled(motion.div)`
   width: 100%;
   position: relative;
   box-shadow: 0 25px 50px rgba(100, 255, 218, 0.2);
-  
+
   @media (max-width: 768px) {
     padding: var(--spacing-8);
     max-width: 90vw;
   }
-  
+
   @media (max-width: 480px) {
     padding: var(--spacing-6);
   }
@@ -55,7 +59,7 @@ const CloseButton = styled.button`
   cursor: pointer;
   transition: var(--transition-normal);
   font-size: 20px;
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.15);
     color: var(--accent-primary);
@@ -67,12 +71,17 @@ const CloseButton = styled.button`
 const IconContainer = styled.div`
   text-align: center;
   font-size: 4rem;
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-21);
   animation: wave 2s ease-in-out infinite;
-  
+
   @keyframes wave {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 `;
 
@@ -82,11 +91,15 @@ const Title = styled.h2`
   color: var(--dark-50);
   text-align: center;
   margin-bottom: var(--spacing-3);
-  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary) 0%,
+    var(--accent-secondary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  
+
   @media (max-width: 480px) {
     font-size: var(--text-2xl);
   }
@@ -98,7 +111,7 @@ const Subtitle = styled.p`
   text-align: center;
   margin-bottom: var(--spacing-8);
   line-height: 1.6;
-  
+
   @media (max-width: 480px) {
     font-size: var(--text-base);
     margin-bottom: var(--spacing-6);
@@ -109,16 +122,16 @@ const OfferList = styled.ul`
   list-style: none;
   padding: 0;
   margin-bottom: var(--spacing-8);
-  
+
   li {
     color: var(--dark-300);
     margin-bottom: var(--spacing-3);
     padding-left: var(--spacing-8);
     position: relative;
     font-size: var(--text-base);
-    
+
     &::before {
-      content: '✓';
+      content: "✓";
       position: absolute;
       left: 0;
       color: var(--accent-primary);
@@ -133,7 +146,7 @@ const ButtonGroup = styled.div`
   gap: var(--spacing-4);
   flex-wrap: wrap;
   justify-content: center;
-  
+
   @media (max-width: 480px) {
     flex-direction: column;
     gap: var(--spacing-3);
@@ -143,7 +156,7 @@ const ButtonGroup = styled.div`
 const StyledButton = styled(Button)`
   flex: 1;
   min-width: 150px;
-  
+
   @media (max-width: 480px) {
     width: 100%;
   }
@@ -161,10 +174,15 @@ const TimerBadge = styled.div`
   margin-bottom: var(--spacing-6);
   text-align: center;
   animation: pulse 2s ease-in-out infinite;
-  
+
   @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
   }
 `;
 
@@ -179,33 +197,36 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onClose }) => {
   const handleClose = useCallback(() => {
     setIsVisible(false);
     if (onClose) onClose();
-    
+
     // Store that popup was shown (expires in 24 hours)
     const expiryTime = Date.now() + 24 * 60 * 60 * 1000;
-    localStorage.setItem('exitIntentShown', expiryTime.toString());
+    localStorage.setItem("exitIntentShown", expiryTime.toString());
     setHasShown(true);
   }, [onClose]);
 
-  const handleMouseLeave = useCallback((e: MouseEvent) => {
-    // Only trigger if mouse leaves from top of screen
-    if (e.clientY <= 0 && !hasShown) {
-      // Check if popup was already shown today
-      const lastShown = localStorage.getItem('exitIntentShown');
-      
-      if (lastShown) {
-        const expiryTime = parseInt(lastShown, 10);
-        if (Date.now() < expiryTime) {
-          return; // Don't show if within 24 hours
+  const handleMouseLeave = useCallback(
+    (e: MouseEvent) => {
+      // Only trigger if mouse leaves from top of screen
+      if (e.clientY <= 0 && !hasShown) {
+        // Check if popup was already shown today
+        const lastShown = localStorage.getItem("exitIntentShown");
+
+        if (lastShown) {
+          const expiryTime = parseInt(lastShown, 10);
+          if (Date.now() < expiryTime) {
+            return; // Don't show if within 24 hours
+          }
         }
+
+        setIsVisible(true);
       }
-      
-      setIsVisible(true);
-    }
-  }, [hasShown]);
+    },
+    [hasShown]
+  );
 
   useEffect(() => {
     // Check if user has seen popup recently
-    const lastShown = localStorage.getItem('exitIntentShown');
+    const lastShown = localStorage.getItem("exitIntentShown");
     if (lastShown) {
       const expiryTime = parseInt(lastShown, 10);
       if (Date.now() < expiryTime) {
@@ -216,12 +237,12 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onClose }) => {
 
     // Add event listener with delay to avoid false positives on page load
     const timer = setTimeout(() => {
-      document.addEventListener('mouseleave', handleMouseLeave);
+      document.addEventListener("mouseleave", handleMouseLeave);
     }, 2000);
 
     return () => {
       clearTimeout(timer);
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [handleMouseLeave]);
 
@@ -241,7 +262,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onClose }) => {
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            transition={{ type: 'spring', damping: 25 }}
+            transition={{ type: "spring", damping: 25 }}
             onClick={(e) => e.stopPropagation()}
           >
             <CloseButton onClick={handleClose} aria-label="Close popup">
@@ -253,19 +274,19 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onClose }) => {
             <Title>Wait! Before You Go...</Title>
 
             <Subtitle>
-              I'd love to help bring your next project to life!
+              Let’s make your business more secure, before attackers do.
             </Subtitle>
 
-            <div style={{ textAlign: 'center' }}>
-              <TimerBadge>⚡ Let's Connect!</TimerBadge>
+            <div style={{ textAlign: "center" }}>
+              <TimerBadge>Book a Free Security Consultation</TimerBadge>
             </div>
 
             <OfferList>
-              <li>Free project consultation & estimate</li>
-              <li>Modern, responsive web applications</li>
-              <li>Security-focused desktop applications</li>
-              <li>Mobile app development</li>
-              <li>Fast turnaround & dedicated support</li>
+              <li>Full-stack VAPT (Web, API & Cloud)</li>
+              <li>Automated recon & continuous monitoring setup</li>
+              <li>Security tooling with AI-driven insights</li>
+              <li>Cloud infrastructure hardening (AWS, GCP, Azure)</li>
+              <li>Fast, transparent reporting with actionable fixes</li>
             </OfferList>
 
             <ButtonGroup>
@@ -276,27 +297,29 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onClose }) => {
                 size="lg"
                 onClick={handleClose}
               >
-                💬 Get In Touch
+                Get In Touch
               </StyledButton>
               <StyledButton
                 as={Link}
-                to="/projects"
+                to="/case-studies"
                 variant="outline"
                 size="lg"
                 onClick={handleClose}
               >
-                👀 View Projects
+                View Case Studies
               </StyledButton>
             </ButtonGroup>
 
-            <div style={{ 
-              textAlign: 'center', 
-              marginTop: 'var(--spacing-6)', 
-              fontSize: 'var(--text-sm)', 
-              color: 'var(--dark-500)' 
-            }}>
+            <div
+              style={{
+                textAlign: "center",
+                marginTop: "var(--spacing-6)",
+                fontSize: "var(--text-sm)",
+                color: "var(--dark-500)",
+              }}
+            >
               <p>📧 contact@vinitvora.com</p>
-              <p style={{ marginTop: 'var(--spacing-2)' }}>
+              <p style={{ marginTop: "var(--spacing-2)" }}>
                 Available for freelance projects
               </p>
             </div>

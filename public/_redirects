@@ -1,3 +1,13 @@
-# Netlify redirects for React Router (SPA)
-# This ensures all routes are handled by React Router instead of returning 404
+# 🔁 Redirect Netlify subdomain to primary domain
+https://vinitvora.netlify.app/* https://vinitvora.com/:splat 301!
+
+# 🌐 Redirect all www to non-www (canonical domain)
+https://www.vinitvora.com/* https://vinitvora.com/:splat 301!
+
+# 🔒 Enforce HTTPS (redirect all HTTP to HTTPS)
+http://vinitvora.com/* https://vinitvora.com/:splat 301!
+http://www.vinitvora.com/* https://vinitvora.com/:splat 301!
+http://vinitvora.netlify.app/* https://vinitvora.com/:splat 301!
+
+# ⚙️ React router fallback (SPA support)
 /* /index.html 200

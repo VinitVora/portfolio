@@ -7,6 +7,7 @@ import { getAnimationConfig, getDeviceInfo } from '../utils/performance';
 import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
 import profileImage from '../assets/images/Home_dp.jpg';
+import { easeOut } from 'framer-motion';
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -385,14 +386,20 @@ const Home: React.FC = () => {
   };
 
   const profileVariants = {
-    hidden: { opacity: 0, scale: 0.9, rotate: animConfig.reducedMotion ? 0 : -5 },
+    hidden: { opacity: 0, scale: 0.9, rotate: animConfig.reducedMotion ? 0 : -3 },
     visible: { 
       opacity: 1, 
       scale: 1, 
       rotate: 0,
-      transition: { duration: animConfig.duration * 1.5 }
+      transition: { 
+        duration: animConfig.duration * 1.5,
+        ease: easeOut, 
+        delay: 0.5
+      }
     }
   };
+  
+  
 
   const floatingIconVariants = {
     hidden: { opacity: 0, scale: 0 },

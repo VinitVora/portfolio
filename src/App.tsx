@@ -15,20 +15,16 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound')); // ✅ new
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check if critical resources are loaded
     const handleLoad = () => {
-      // Small delay to ensure smooth transition
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
+      setTimeout(() => setIsLoading(false), 500);
     };
 
-    // If already loaded, set loading to false immediately
     if (document.readyState === 'complete') {
       handleLoad();
     } else {
@@ -41,9 +37,7 @@ function App() {
     return (
       <>
         <GlobalStyle />
-        <FullScreenLoading 
-          text="Loading Portfolio..."
-        />
+        <FullScreenLoading text="Loading Portfolio..." />
       </>
     );
   }
@@ -57,17 +51,17 @@ function App() {
       <ExitIntentPopup />
       <Breadcrumb />
       <Navbar />
-      <Suspense fallback={
-        <FullScreenLoading 
-          text="Loading Page..."
-        />
-      }>
+
+      <Suspense fallback={<FullScreenLoading text="Loading Page..." />}>
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/case-studies" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* ✅ Catch-all route for 404 */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
       </Suspense>
