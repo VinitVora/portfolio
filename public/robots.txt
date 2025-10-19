@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vinitvora.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent overloading your server)
+Crawl-delay: 1

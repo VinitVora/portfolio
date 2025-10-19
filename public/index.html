@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- Viewport & Display Meta -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#64ffda" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Performance Optimization -->
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- Font Preloads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+      />
+    </noscript>
+
+    <!-- Prevent FOUC -->
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+          sans-serif;
+        background-color: #09090b;
+        color: #f4f4f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      #root {
+        min-height: 100vh;
+      }
+    </style>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Vinit Vora – DevSecOps Engineer & Security Specialist. Portfolio showcasing real-world security case studies across Web, Cloud, and Automation. Experienced in AWS WAF, EKS Security, CI/CD Hardening, and Security Automation Frameworks."
+    />
+    <meta
+      name="keywords"
+      content="Vinit Vora, DevSecOps, Security Engineer, Cloud Security, AWS WAF, EKS Security, Web VAPT, Jenkins Security, SonarQube, Automation, Incident Response, Observability, CSPM, Security Portfolio"
+    />
+    <meta name="author" content="Vinit Vora" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="14 days" />
+    <meta name="rating" content="general" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vinitvora.com/" />
+    <meta
+      property="og:title"
+      content="Vinit Vora – DevSecOps Engineer & Security Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore detailed case studies and research by Vinit Vora — from AWS Security Audits and Web VAPT to CI/CD automation and incident response systems."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Vinit Vora Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://vinitvora.com/" />
+    <meta
+      name="twitter:title"
+      content="Vinit Vora – DevSecOps Engineer & Security Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Security-focused portfolio covering Web, Cloud, and Automation by Vinit Vora."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/og-preview.png" />
+    <meta name="twitter:image:alt" content="Vinit Vora Security Portfolio" />
+
+    <!-- Security Headers -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+
+    <!-- Apple Touch Icon & Manifest -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>Vinit Vora | DevSecOps Engineer & Security Portfolio</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- Netlify form (if you ever use Netlify hosting) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <div id="root"></div>
+  </body>
+</html>
