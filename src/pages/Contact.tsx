@@ -417,7 +417,7 @@ const Contact: React.FC = () => {
   return (
     <PageTransition>
       <SEO
-        title="Contact | Vinit Vora – Security Consultant & VAPT Specialist"
+        title="Request a Security Assessment | Vinit Vora"
         description="Request an authorized web, API, SaaS, AWS, or EKS security assessment from Vinit Vora. Written authorization and an agreed testing scope are required."
         keywords="Vinit Vora, Application Security Engineer, Web Penetration Testing, API Security Assessment, AWS Security Review, EKS Security Review, Mumbai"
         image="https://vinitvora.com/vinit-vora-home.jpg"

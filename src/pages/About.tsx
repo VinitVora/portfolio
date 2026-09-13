@@ -359,7 +359,7 @@ const timelineData = [
     year: 'May 2024 - Jul 2024',
     title: 'Cybersecurity internship',
     description: 'Practical security testing and analysis experience supporting the transition from laboratory work to professional security engineering.',
-    category: 'Education'
+    category: 'Internships'
   },
   {
     year: '2021 - 2025',
