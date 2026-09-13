@@ -438,7 +438,7 @@ const About: React.FC = () => {
         description="Production application security experience across manual web and API testing, AWS and EKS reviews, security automation, incident response, remediation support, and retesting."
         keywords="Vinit Vora, Application Security Engineer, API Security, Web Penetration Testing, AWS Security, EKS Security, DevSecOps, Remediation"
         image="https://vinitvora.com/vinit-vora-home.jpg"
-        url="https://vinitvora.com"
+        url="https://vinitvora.com/about"
       />
       {/* Hero Section */}
       <AboutHero>

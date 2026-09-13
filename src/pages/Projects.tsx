@@ -624,7 +624,7 @@ const Projects: React.FC = () => {
         description="Anonymized production application-security case studies covering API authorization and business-logic testing. These are professional-experience examples, not freelance-client engagements."
         keywords="Vinit Vora, API Authorization Testing, BOLA, IDOR, Business Logic Security, TOCTOU, Application Security Case Studies"
         image="https://vinitvora.com/vinit-vora-home.jpg"
-        url="https://vinitvora.com"
+        url="https://vinitvora.com/case-studies"
       />
       <ProjectsHero>
         <Container>

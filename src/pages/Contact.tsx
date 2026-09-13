@@ -421,7 +421,7 @@ const Contact: React.FC = () => {
         description="Request an authorized web, API, SaaS, AWS, or EKS security assessment from Vinit Vora. Written authorization and an agreed testing scope are required."
         keywords="Vinit Vora, Application Security Engineer, Web Penetration Testing, API Security Assessment, AWS Security Review, EKS Security Review, Mumbai"
         image="https://vinitvora.com/vinit-vora-home.jpg"
-        url="https://vinitvora.com"
+        url="https://vinitvora.com/contact"
       />
       <FAQSchema />
       <ContactHero>
