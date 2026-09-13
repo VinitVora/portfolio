@@ -18,14 +18,6 @@ import { StaggerContainer, StaggerItem } from "../components/ScrollReveal";
 // Import project images
 import fintechCaseImg from "../assets/images/1.png";
 import edtechCaseImg from "../assets/images/2.png";
-import saasWafCaseImg from "../assets/images/3.png";
-import cloudAuditCaseImg from "../assets/images/4.png";
-import eksAuditCaseImg from "../assets/images/5.png";
-import cspmCaseImg from "../assets/images/6.png";
-import vulnAutomationCaseImg from "../assets/images/7.png";
-import cicdCaseImg from "../assets/images/8.png";
-import incidentResponseCaseImg from "../assets/images/9.png";
-import researchPaperImg from "../assets/images/10.png";
 
 const ProjectsHero = styled(Section)`
   padding-top: 140px;
@@ -420,231 +412,42 @@ const projectsData = [
   // 🌐 Web & API Security
   {
     id: 1,
-    title: "Full-Scope API Security Assessment: Fintech Platform (Anonymised)",
+    title: "Cross-Account Authorization Failure in a Production API",
     category: "Web & API Security",
     description:
-      "Conducted a comprehensive VAPT across authentication, authorization, and input validation layers for a fintech API stack serving 100K+ monthly users.",
+      "An anonymized production security case study involving missing object-ownership enforcement across authenticated API requests.",
     longDescription:
-      "Performed a full-scope vulnerability assessment and penetration test on a high-traffic fintech payment API that handled sensitive KYC and transaction data. The engagement covered authentication flows, JWT handling, rate limiting, and business logic flaws. Identified 8 high-risk vulnerabilities including broken object-level authorization (IDOR) and weak JWT validation. Delivered a CVSS-based risk matrix and guided dev teams through remediation validation. Integrated post-fix traffic monitoring via AWS WAF and ELK dashboards to ensure ongoing visibility.",
+      "During authorized production application-security work, I found that authenticated requests could reference objects belonging to another account because authorization checks did not consistently validate ownership. I reproduced the behavior with controlled test accounts, documented the affected permission boundary without retaining real customer data, and worked with developers on centralized server-side ownership checks and negative authorization tests. This is anonymized professional experience, not a freelance-client engagement.",
     technologies: [
       "Burp Suite",
-      "OWASP ZAP",
-      "Postman",
-      "CyberCLI",
-      "SQLMap",
-      "AWS Stack",
+      "Authorization Testing",
+      "BOLA / IDOR",
+      "Business Logic",
+      "Remediation Validation",
     ],
-    report: "/reports/Fintech-Platform-Report.pdf",
     featured: true,
-    icon: "💳",
+    icon: "🔐",
     image: fintechCaseImg,
     bgColor: "#000000",
   },
   {
     id: 2,
-    title: "Web Application VAPT: EdTech Platform (Anonymised)",
-    category: "Web & API Security",
+    title: "Concurrency Flaw in a Payment Workflow",
+    category: "Business Logic Security",
     description:
-      "Performed black-box and gray-box penetration testing on a large EdTech portal handling student records and payment processing.",
+      "An anonymized production case study showing how concurrent requests could bypass an intended single-execution control.",
     longDescription:
-      "Executed a hybrid black-box and authenticated penetration test for an EdTech SaaS platform with 500K+ active users. The scope included multiple subdomains, REST APIs, and third-party integrations. Discovered major access control weaknesses and insecure direct object references (IDOR) that allowed data exposure between accounts. Delivered a 60-page report with PoC payloads, CVSS scoring, and prioritized fixes. Post-remediation, integrated automated nightly scans via CyberCLI for continuous coverage.",
+      "During authorized production application-security work, I identified a time-of-check to time-of-use weakness in a payment-related workflow. Carefully synchronized requests could pass the same precondition before state was updated. I validated the issue with controlled accounts and a minimal request set, stopped before causing financial impact, and recommended an atomic server-side control with idempotency and concurrency-focused regression tests. This is anonymized professional experience, not a freelance-client engagement.",
     technologies: [
-      "OWASP ZAP",
       "Burp Suite Pro",
-      "Nmap",
-      "Amass",
-      "CyberCLI",
-      "Python",
+      "Concurrency Testing",
+      "TOCTOU",
+      "Workflow Integrity",
+      "Retesting",
     ],
-    report: "/reports/EdTech-Platform-Report.pdf",
-    featured: false,
-    icon: "🎓",
-    image: edtechCaseImg,
-    bgColor: "#000000",
-  },
-  {
-    id: 3,
-    title: "Web VAPT & WAF Rule Optimization: SaaS Platform \n \n (Anonymised)",
-    category: "Web & API Security",
-    description:
-      "Performed full-stack web penetration testing and optimized AWS WAF rules to reduce false positives while maintaining strong protection.",
-    longDescription:
-      "Engaged with a SaaS product team to identify OWASP Top 10 vulnerabilities and tune their AWS WAF configuration. Found multiple XSS vectors in legacy frontend modules and refined regex-based rules to eliminate false positives on legitimate API calls. Delivered actionable recommendations and implemented custom bypass whitelists for business-critical endpoints. Verified mitigation through regression testing and traffic simulation in staging environments. The engagement resulted in a 40% reduction in WAF noise and zero production false blocks post-launch.",
-    technologies: [
-      "AWS WAF",
-      "Burp Suite",
-      "Regex RuleSets",
-      "ElastAlert2",
-      "CloudWatch",
-      "Fluent Bit",
-    ],
-    report: "/reports/SaaS-Platform-Report.pdf",
-    featured: false,
-    icon: "🧠",
-    image: saasWafCaseImg,
-    bgColor: "#000000",
-  },
-
-  // ☁️ Cloud & Infrastructure
-  {
-    id: 4,
-    title: "AWS Multi-Account Security Audit & IAM Hardening (Anonymised)",
-    category: "Cloud & Infrastructure",
-    description:
-      "Performed a cross-account AWS audit focusing on IAM roles, policies, and WAF configurations for multi-environment setups.",
-    longDescription:
-      "Conducted a detailed multi-account AWS security audit spanning development, staging, and production environments. Mapped all IAM roles, policies, and trust relationships to uncover privilege escalations and misconfigurations. Hardened access by implementing least privilege, session MFA enforcement, and cross-account role boundaries. Analyzed WAF rules and ALB configurations for misalignments. Delivered a detailed remediation plan and Terraform-ready IAM templates to standardize secure provisioning across all accounts.",
-    technologies: [
-      "AWS IAM",
-      "AWS WAF",
-      "Terraform",
-      "CloudTrail",
-      "AWS Config",
-      "ScoutSuite",
-    ],
-    report: "/reports/AWS-Audit-Report.pdf",
-    featured: true,
-    icon: "☁️",
-    image: cloudAuditCaseImg,
-    bgColor: "#000000",
-  },
-  {
-    id: 5,
-    title: "EKS Cluster Security Audit & Runtime Defense (Anonymised)",
-    category: "Cloud & Infrastructure",
-    description:
-      "Audited Kubernetes (EKS) clusters for misconfigurations, privilege escalation risks, and runtime vulnerabilities.",
-    longDescription:
-      "Performed a full-scale security review of Amazon EKS clusters running production workloads. Audited Kubernetes RBAC, Pod Security Policies, and service account bindings for excessive permissions. Integrated Falco and Kube-Bench to detect runtime anomalies and CIS benchmark deviations. Hardened cluster configuration by enforcing namespace-level isolation, image signature verification, and secrets encryption via KMS. Post-audit, delivered a cluster hardening playbook and live threat detection setup integrated with CloudWatch alerts.",
-    technologies: [
-      "Amazon EKS",
-      "Falco",
-      "Kube-Bench",
-      "KMS",
-      "RBAC",
-      "CloudWatch",
-    ],
-    report: "/reports/EKS-Cluster-Audit-Report.pdf",
-    featured: false,
-    icon: "🔐",
-    image: eksAuditCaseImg,
-    bgColor: "#000000",
-  },
-  {
-    id: 6,
-    title: "Cloud Security Posture Management Automation (Anonymised)",
-    category: "Cloud & Infrastructure",
-    description:
-      "Developed an automated CSPM workflow using AWS Lambda, Config, and Slack alerts for real-time compliance checks.",
-    longDescription:
-      "Designed and deployed an automated Cloud Security Posture Management (CSPM) system across multiple AWS accounts. Combined AWS Config rules with custom Lambda functions to monitor compliance against CIS benchmarks. Configured automated remediation triggers for S3 public access, security group violations, and unencrypted EBS volumes. Integrated SNS and Slack for instant alerting and periodic compliance summaries. Resulted in a 75% reduction in manual security review efforts and continuous compliance visibility.",
-    technologies: [
-      "AWS Lambda",
-      "AWS Config",
-      "SNS",
-      "Slack API",
-      "Python",
-      "CloudFormation",
-    ],
-    report: "/report/AWS-WAF&CloudFront-Audit-Report.pdf",
-    featured: false,
-    icon: "🧭",
-    image: cspmCaseImg,
-    bgColor: "#000000",
-  },
-
-  // 🤖 Automation & Tooling
-  {
-    id: 7,
-    title:
-      "Security Automation Framework for Continuous Vulnerability Management (Anonymised)",
-    category: "Automation & Tooling",
-    description:
-      "Built a serverless framework for continuous recon, scanning, and reporting using AWS Lambda and open-source tools.",
-    longDescription:
-      "Developed a fully automated, serverless vulnerability management framework to continuously scan and monitor assets across AWS environments. Integrated tools like Amass, Nmap, and OWASP ZAP with AWS Lambda and EventBridge for periodic scanning. Created aggregation logic to parse and correlate results, generate CVSS-based summaries, and push contextual alerts to Slack. The system now runs daily scans autonomously, providing near real-time vulnerability detection and continuous security visibility.",
-    technologies: [
-      "AWS Lambda",
-      "Python",
-      "OWASP ZAP",
-      "Nmap",
-      "Amass",
-      "Slack API",
-    ],
-    report: "/reports/Security-Automation-Framework-Report.pdf",
     featured: true,
     icon: "⚙️",
-    image: vulnAutomationCaseImg,
-    bgColor: "#000000",
-  },
-  {
-    id: 8,
-    title:
-      "CI/CD Secure Code Review Automation (Jenkins + SonarQube + Semgrep)",
-    category: "Automation & Tooling",
-    description:
-      "Integrated security scanning into Jenkins pipelines to automate static analysis and dependency checks pre-deployment.",
-    longDescription:
-      "Implemented CI/CD security automation by integrating SonarQube and Semgrep into Jenkins pipelines. Configured quality gates to block insecure merges, added custom Semgrep rules for Python and Node.js codebases, and automated dependency and secret scans. Results were consolidated into structured JSON/PDF reports sent via Slack and stored in S3 for audit readiness. Reduced manual review efforts by 85% and improved release security across all microservices.",
-    technologies: [
-      "Jenkins",
-      "SonarQube",
-      "Semgrep",
-      "truffleHog",
-      "Python",
-      "Slack API",
-    ],
-    report: "/reports/CI_CD-Secure-Code-Review-Automation-Report.pdf",
-    featured: false,
-    icon: "🚀",
-    image: cicdCaseImg,
-    bgColor: "#000000",
-  },
-  {
-    id: 9,
-    title:
-      "Security Observability & Incident Response Automation (ElastAlert2 + CloudWatch + Slack)",
-    category: "Automation & Tooling",
-    description:
-      "Engineered a unified alerting pipeline combining OpenSearch, CloudWatch, and Slack for real-time security event detection.",
-    longDescription:
-      "Deployed a complete observability and incident response automation pipeline across multiple AWS accounts. Integrated ElastAlert2 with OpenSearch to detect anomalies, CloudWatch to monitor WAF metrics, and Slack for real-time triage workflows. Built correlation logic for deduplication and context enrichment, reducing alert fatigue by 80% and average response time by over 85%. Delivered actionable visibility and automated escalation for critical production incidents.",
-    technologies: [
-      "OpenSearch",
-      "ElastAlert2",
-      "CloudWatch",
-      "AWS Lambda",
-      "Slack API",
-      "Python",
-    ],
-    report: "/reports/Security-Observability&Incident-Response-Automation-Report.pdf",
-    featured: false,
-    icon: "📊",
-    image: incidentResponseCaseImg,
-    bgColor: "#000000",
-  },
-  {
-    id: 10,
-    title:
-      "Research Paper: Machine Learning–Based Intrusion Detection for IoT Networks (IEEE Published)",
-    category: "Research & Publications",
-    description:
-      "First-author IEEE paper presenting a lightweight IDS for IoT devices using AdaBoost and Random Forest algorithms.",
-    longDescription:
-      "As the first author, I designed and implemented a machine learning–based intrusion detection system (IDS) optimized for IoT networks running on Contiki-OS. The system leverages AdaBoost and Random Forest classifiers to detect attacks such as DDoS, sinkhole, and MITM with high accuracy. Trained on the Edge-IIoTset dataset and validated through the Cooja simulator and real IoT hardware, the model achieved 91.08% accuracy, 93.0% precision, and 92.0% recall while maintaining minimal resource usage. Published in IEEE Xplore, the paper demonstrates a practical approach to securing constrained IoT environments through intelligent automation.",
-    technologies: [
-      "Python",
-      "Scikit-learn",
-      "AdaBoost",
-      "Random Forest",
-      "Contiki-OS",
-      "Cooja Simulator",
-      "Edge-IIoTset Dataset",
-    ],
-    paper: "https://doi.org/10.1109/ICACRS62842.2024.10841743",
-    featured: true,
-    icon: "📘",
-    image: researchPaperImg,
+    image: edtechCaseImg,
     bgColor: "#000000",
   },
 ];
@@ -652,9 +455,7 @@ const projectsData = [
 const categories = [
   "All",
   "Web & API Security",
-  "Cloud & Infrastructure",
-  "Automation & Tooling",
-  "Research & Publications",
+  "Business Logic Security",
 ];
 
 interface ProjectModalProps {
@@ -746,29 +547,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
 
           <ModalActions>
-            {/* If the project has a paper link, show "View Paper" */}
-            {project.paper ? (
-              <ActionButton
-                as="a"
-                href={project.paper}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="primary"
-              >
-                📄 View Paper
-              </ActionButton>
-            ) : (
-              /* Otherwise, show "Download Report" */
-              <ActionButton
-                as="a"
-                href={project.report}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="primary"
-              >
-                📂 Download Report
-              </ActionButton>
-            )}
+            <ActionButton as="a" href="/contact" variant="primary">
+              Request an Assessment
+            </ActionButton>
           </ModalActions>
         </ModalContent>
       </ModalOverlay>
@@ -839,9 +620,9 @@ const Projects: React.FC = () => {
   return (
     <PageTransition>
       <SEO
-        title="Vinit Vora - Cybersecurity Consultant & VAPT Engineer | AI-Powered Recon & Security Automation"
-        description="Cybersecurity consultant and VAPT engineer from India specializing in vulnerability assessment, automated reconnaissance, and AI-driven security tooling. Creator of the  CyberCLI — a powerful suite integrating nmap, Amass, ZAP, and more. Helping businesses secure their web apps and APIs with precision and automation."
-        keywords="Vinit Vora, Cybersecurity Consultant, VAPT Engineer, Vulnerability Assessment, Penetration Testing, Security Automation, Recon Tools, AI Security, Bug Bounty, Web Application Security, API Security, OWASP ZAP, nmap, amass, sublist3r, Python Security Tools, Hire Security Consultant, India"
+        title="Security Case Studies | Vinit Vora"
+        description="Anonymized production application-security case studies covering API authorization and business-logic testing. These are professional-experience examples, not freelance-client engagements."
+        keywords="Vinit Vora, API Authorization Testing, BOLA, IDOR, Business Logic Security, TOCTOU, Application Security Case Studies"
         image="https://vinitvora.com/vinit-vora-home.jpg"
         url="https://vinitvora.com"
       />
@@ -865,15 +646,15 @@ const Projects: React.FC = () => {
                 lineHeight: 1.6,
               }}
             >
-              All case studies are anonymized and sanitized to protect client
-              confidentiality. Reports and data are illustrative of real
-              security engagements.
+              These anonymized production security case studies are derived
+              from professional experience. They are not presented as
+              freelance-client engagements. Sensitive systems, identities,
+              data, and exploit-ready details have been removed.
             </motion.p>
 
             <HeroSubtitle variants={itemVariants}>
-              A curated collection of real-world security engagements and audits
-              covering Web & API Security, Cloud Infrastructure Hardening, and
-              Security Automation.
+              Examples of manual authorization and business-logic testing,
+              evidence handling, developer remediation support, and retesting.
             </HeroSubtitle>
 
             <FilterSection variants={itemVariants}>
@@ -982,35 +763,6 @@ const Projects: React.FC = () => {
                               <ActionButton variant="primary" size="sm">
                                 View Summary
                               </ActionButton>
-                              {project.paper ? (
-                                <ActionButton
-                                  as="a"
-                                  href={project.paper}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  variant="outline"
-                                  size="sm"
-                                  onClick={(e: React.MouseEvent) =>
-                                    e.stopPropagation()
-                                  }
-                                >
-                                  📄 View Paper
-                                </ActionButton>
-                              ) : (
-                                <ActionButton
-                                  as="a"
-                                  href={project.report}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  variant="outline"
-                                  size="sm"
-                                  onClick={(e: React.MouseEvent) =>
-                                    e.stopPropagation()
-                                  }
-                                >
-                                  📂 View Report
-                                </ActionButton>
-                              )}
                             </ProjectActions>
                           </ProjectContent>
                         </ProjectCard>

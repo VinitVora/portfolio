@@ -418,8 +418,8 @@ const Contact: React.FC = () => {
     <PageTransition>
       <SEO
         title="Contact | Vinit Vora – Security Consultant & VAPT Specialist"
-        description="Cybersecurity consultant and VAPT engineer from India specializing in vulnerability assessment, automated reconnaissance, and AI-driven security tooling. Creator of the  CyberCLI — a powerful suite integrating nmap, Amass, ZAP, and more. Helping businesses secure their web apps and APIs with precision and automation."
-        keywords="Vinit Vora, Cybersecurity Consultant, VAPT Engineer, Vulnerability Assessment, Penetration Testing, Security Automation, Recon Tools, AI Security, Bug Bounty, Web Application Security, API Security, OWASP ZAP, nmap, amass, sublist3r, Python Security Tools, Hire Security Consultant, India"
+        description="Request an authorized web, API, SaaS, AWS, or EKS security assessment from Vinit Vora. Written authorization and an agreed testing scope are required."
+        keywords="Vinit Vora, Application Security Engineer, Web Penetration Testing, API Security Assessment, AWS Security Review, EKS Security Review, Mumbai"
         image="https://vinitvora.com/vinit-vora-home.jpg"
         url="https://vinitvora.com"
       />
@@ -433,8 +433,7 @@ const Contact: React.FC = () => {
           >
             <HeroTitle variants={itemVariants}>Let's Work Together</HeroTitle>
             <HeroSubtitle variants={itemVariants}>
-            Working on an app, API, or cloud setup that needs a security review?
-            Let’s connect and explore how I can help harden your systems and reduce vulnerabilities.
+            Working on a web application, API, SaaS product, AWS account, or EKS environment that needs a focused review? Share a high-level description only; written authorization and a defined scope are required before any testing begins.
             </HeroSubtitle>
           </motion.div>
         </Container>
@@ -574,11 +573,14 @@ const Contact: React.FC = () => {
                     ) : (
                       <>
                         <span></span>
-                        Send Message
+                        Request an Assessment
                       </>
                     )}
                   </Button>
                 </form>
+                <p style={{ marginTop: "var(--spacing-5)", color: "var(--dark-500)", fontSize: "var(--text-sm)", lineHeight: 1.6 }}>
+                  Privacy note: provide only the minimum information needed for an initial discussion. Do not submit credentials, production data, vulnerability details, or other sensitive material through this form. Contact details are used only to respond to your enquiry.
+                </p>
               </ContactForm>
             </motion.div>
 

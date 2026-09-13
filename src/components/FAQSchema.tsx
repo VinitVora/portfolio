@@ -11,7 +11,7 @@ const FAQSchema: React.FC = () => {
         name: 'What services does Vinit Vora offer?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'I offer VAPT, Cloud Security Audit, UI/UX design, Secure Code Review & CI/CD Security, DevSecOps Implementaion, and Security Reporting & Consultancy'
+          text: 'I offer bounded web application and API security assessments, SaaS web and API assessments, and AWS and EKS security reviews. Each engagement includes actionable reporting and defined retest terms.'
         }
       },
       {
@@ -19,7 +19,7 @@ const FAQSchema: React.FC = () => {
         name: 'What does Vinit specialize in?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'I specialize in API Testing, Network Security Testing, DevSecOps Implementation and Cloud Security testing.'
+          text: 'I specialize in manual web and API testing, authorization and business-logic vulnerabilities, AWS and Kubernetes security, and developer-focused remediation support.'
         }
       },
       {
@@ -27,7 +27,7 @@ const FAQSchema: React.FC = () => {
         name: 'Is Vinit available for freelance projects?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, I am currently available for freelance projects. You can contact me through the contact form on my portfolio website or email me at contact@vinitvora.com'
+          text: 'Yes. Security testing is accepted only with verifiable written authorization and an agreed scope. Use the contact form or email contact@vinitvora.com to discuss an assessment.'
         }
       },
       {

@@ -417,9 +417,9 @@ const Home: React.FC = () => {
   return (
     <PageTransition>
       <SEO
-        title="Vinit Vora - Cybersecurity Consultant & VAPT Engineer | AI-Powered Recon & Security Automation"
-        description="Cybersecurity consultant and VAPT engineer from India specializing in vulnerability assessment, automated reconnaissance, and AI-driven security tooling. Creator of the  CyberCLI — a powerful suite integrating nmap, Amass, ZAP, and more. Helping businesses secure their web apps and APIs with precision and automation."
-        keywords="Vinit Vora, Cybersecurity Consultant, VAPT Engineer, Vulnerability Assessment, Penetration Testing, Security Automation, Recon Tools, AI Security, Bug Bounty, Web Application Security, API Security, OWASP ZAP, nmap, amass, sublist3r, Python Security Tools, Hire Security Consultant, India"
+        title="Vinit Vora | Application Security Engineer"
+        description="Application security engineer in Mumbai specializing in manual web and API penetration testing, authorization and business-logic testing, AWS and Kubernetes security, remediation guidance, and retesting."
+        keywords="Vinit Vora, Application Security Engineer, Web Penetration Testing, API Security Testing, Authorization Testing, BOLA, IDOR, Business Logic Security, AWS Security, Kubernetes Security, EKS Security, Mumbai"
         image="https://vinitvora.com/vinit-vora-home.jpg"
         url="https://vinitvora.com"
       />
@@ -447,12 +447,11 @@ const Home: React.FC = () => {
               </MainTitle>
 
               <Subtitle variants={itemVariants}>
-                Security Engineer & VAPT Consultant
+                Application Security Engineer | Web & API Penetration Testing | AWS & Kubernetes Security
               </Subtitle>
 
               <StatusBadges variants={itemVariants}>
-                <Badge variant="success">✅ Available for projects</Badge>
-                <Badge variant="info">🚀 Freelancer</Badge>
+                <Badge variant="success">Available for authorized security assessments</Badge>
               </StatusBadges>
 
               <LocationInfo variants={itemVariants}>
@@ -468,7 +467,7 @@ const Home: React.FC = () => {
               </LiveTimeDisplay>
 
               <Description variants={itemVariants}>
-                I help businesses secure their web apps, APIs, and cloud infrastructure through deep manual testing, security automation, and scalable VAPT solutions.
+                I help product teams find and fix authorization failures, business-logic flaws, and practical security weaknesses in web applications, APIs, AWS, and EKS environments. Every assessment requires written authorization and includes developer-ready remediation guidance.
               </Description>
 
               <ActionButtons variants={itemVariants}>
@@ -476,26 +475,26 @@ const Home: React.FC = () => {
                   View Case Studies
                 </Button>
                 <Button as={Link} to="/contact" variant="outline" size="lg">
-                  Get In Touch
+                  Request a Security Assessment
                 </Button>
               </ActionButtons>
 
               <motion.div variants={itemVariants}>
-                <TechStackTitle>Preferred Tech Stack</TechStackTitle>
+                <TechStackTitle>Core Assessment Areas</TechStackTitle>
                 <TechStack>
                   <TechItem
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <span>🔹</span>
-                    <span>Burp Suite Pro</span>
+                    <span>API Authorization</span>
                   </TechItem>
                   <TechItem
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <span>🔹</span>
-                    <span>OWASP ZAP</span>
+                    <span>Business Logic</span>
                   </TechItem>
 
                 
@@ -504,21 +503,21 @@ const Home: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <span>🔹</span>
-                    <span>Postman</span>
+                    <span>Web Application Security</span>
                   </TechItem>
                   <TechItem
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <span>🔹</span>
-                    <span>AWS Security Stack</span>
+                    <span>AWS &amp; EKS Security</span>
                   </TechItem>
                   <TechItem
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <span>🔹</span>
-                    <span>ELK Stack</span>
+                    <span>Remediation &amp; Retesting</span>
                   </TechItem>
                 </TechStack>
               </motion.div>

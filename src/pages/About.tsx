@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Container, Section, Grid, Card } from '../styles/GlobalStyle';
 import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
@@ -256,49 +256,6 @@ const SkillDescription = styled.p`
   margin-bottom: var(--spacing-6);
 `;
 
-const SkillProgressContainer = styled.div`
-  position: relative;
-  background: var(--dark-800);
-  border-radius: var(--radius-sm);
-  height: 10px;
-  margin-bottom: var(--spacing-4);
-  overflow: hidden;
-  border: 1px solid var(--dark-700);
-`;
-
-const SkillProgressBar = styled(motion.div)<{ percentage: number }>`
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  border-radius: var(--radius-sm);
-  position: relative;
-  box-shadow: inset 0 1px 2px rgba(100, 255, 218, 0.2);
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 30px;
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
-    animation: shimmer 3s ease-in-out infinite;
-    border-radius: var(--radius-sm);
-  }
-
-  @keyframes shimmer {
-    0% { transform: translateX(-150%); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateX(150%); opacity: 0; }
-  }
-`;
-
-const SkillPercentage = styled.div`
-  text-align: right;
-  color: var(--accent-primary);
-  font-weight: var(--font-medium);
-  font-size: var(--text-sm);
-`;
-
 const ServicesSection = styled(Section)`
   @media (max-width: 768px) {
     padding-left: var(--spacing-4);
@@ -387,108 +344,77 @@ const ServiceFeatures = styled.ul`
 // Data
 const timelineData = [
   {
-    year: '2024 - Present',
-    title: 'Hands-on industry experience, and the journey continues.',
-    description: 'I worked in cybersecurity, where I conducted vulnerability assessments, strengthened infrastructure defenses, and learned how real-world systems respond under attack.',
+    year: 'May 2025 - Present',
+    title: 'Application security in production',
+    description: 'Application security work spanning web and API testing, AWS and EKS reviews, security automation, incident response, and developer remediation support.',
     category: 'Work Experience'
   },
   {
-    year: '2023 - 2024',
-    title: 'Security internships, sharpening the craft.',
-    description: 'During my internships, I performed real-world penetration testing, analyzed vulnerabilities across live systems, and built the discipline to think like both attacker and defender.',
+    year: 'Nov 2024 - Apr 2025',
+    title: 'Cybersecurity internship',
+    description: 'Hands-on work in vulnerability assessment, application security, and security operations in a professional environment.',
     category: 'Internships'
   },
   {
-    year: '2020 - 2025',
-    title: 'Pursuing my degree, the foundation behind it all.',
-    description: 'With a degree in Cybersecurity and a strong base in practical networking skills, I began diving deep into ethical hacking, vulnerability analysis, and system defense fundamentals.',
+    year: 'May 2024 - Jul 2024',
+    title: 'Cybersecurity internship',
+    description: 'Practical security testing and analysis experience supporting the transition from laboratory work to professional security engineering.',
     category: 'Education'
   },
   {
-    year: '2018',
-    title: 'Started my journey, this is where it begins.',
-    description: 'Every journey starts somewhere — I began mine by experimenting with vulnerable labs, breaking insecure code, and understanding the mindset of attackers.',
-    category: 'Career Beginning'
+    year: '2021 - 2025',
+    title: 'Bachelor’s degree in cybersecurity',
+    description: 'Built foundations in networking, application security, secure development, vulnerability analysis, and system defense.',
+    category: 'Education'
   }
 ];
 
 const skillsData = [
-  { name: 'Web Application Security', percentage: 92, description: 'Manual and automated VAPT testing' },
-  { name: 'Network & API Testing', percentage: 88, description: 'Scanning and exploiting endpoints safely' },
-  { name: 'Burp Suite Pro', percentage: 90, description: 'Advanced interception and fuzzing workflows' },
-  { name: 'OWASP ZAP', percentage: 85, description: 'Automated scanning and spidering' },
-  { name: 'Python & Scripting', percentage: 90, description: 'Automation, tooling, and payload creation' },
-  { name: 'Cloud Security (AWS)', percentage: 80, description: 'IAM, WAF, and resource hardening' },
-  { name: 'DevSecOps', percentage: 82, description: 'Integrating security into CI/CD pipelines' },
-  { name: 'Open Source Intelligence (OSINT)', percentage: 88, description: 'Reconnaissance and data gathering' },
-  { name: 'Vulnerability Management', percentage: 82, description: 'Reporting, tracking, and remediation' },
-  { name: 'Linux & System Hardening', percentage: 80, description: 'Server configuration and privilege control' },
-  { name: 'Version Control (Git)', percentage: 85, description: 'Secure code management practices' },
-  { name: 'Problem Solving', percentage: 90, description: 'Analytical thinking and exploit debugging' }
+  { name: 'Web Application Security', description: 'Manual testing of authentication, sessions, access control, input handling, configuration, and business logic.' },
+  { name: 'API Security', description: 'Authorization, BOLA/IDOR, object ownership, mass assignment, replay, rate limits, and workflow abuse.' },
+  { name: 'AWS & EKS Security', description: 'Bounded reviews of IAM, RBAC, workload permissions, exposure, logging, secrets, and monitoring gaps.' },
+  { name: 'Secure Code Review', description: 'Targeted review of security-critical code paths with developer-ready remediation guidance.' },
+  { name: 'DevSecOps Security', description: 'Practical CI/CD controls, security automation, custom checks, and findings triage.' },
+  { name: 'Reporting & Retesting', description: 'Clear technical evidence, executive context, prioritization, remediation discussion, and defined verification.' }
 ];
 
 const servicesData = [
   {
     icon: '🛡️',
-    title: 'Vulnerability Assessment & Penetration Testing',
-    description: 'Manual and automated assessments for web, API, and cloud applications.',
+    title: 'API Authorization & Business-Logic Review',
+    description: 'Manual testing focused on access boundaries and abuse paths that scanners commonly miss.',
     features: [
-      'OWASP Top 10 coverage',
-      'Custom payload & fuzzing-based testing',
-      'Detailed reporting with CVSS scoring',
-      'Retesting after remediation'
+      'Authentication and authorization flows',
+      'BOLA/IDOR and object ownership',
+      'Workflow manipulation and replay',
+      'Actionable report and defined retest'
     ]
   },
   {
     icon: '☁️',
-    title: 'Cloud Security Audit',
-    description: 'Comprehensive review of AWS security, IAM roles, and cloud configurations.',
+    title: 'Web Application Penetration Test',
+    description: 'A bounded manual assessment of a web application and its agreed attack surface.',
     features: [
-      'AWS WAF & GuardDuty tuning',
-      'IAM least privilege enforcement',
-      'CloudWatch & alert optimization',
-      'S3 bucket and EKS cluster audits'
+      'Authentication and session security',
+      'Access control and input handling',
+      'Business-logic validation',
+      'Technical findings and remediation guidance'
     ]
   },
   {
     icon: '🔍',
-    title: 'Secure Code Review & CI/CD Security',
-    description: 'Integrating security checks directly into development workflows.',
+    title: 'SaaS Web & API Security Assessment',
+    description: 'Combined application and API coverage for a clearly limited SaaS scope.',
     features: [
-      'SonarQube, Semgrep, and Jenkins pipelines',
-      'Secret scanning and dependency checks',
-      'Custom rule creation for security linting',
-      'Automated report generation'
-    ]
-  },
-  {
-    icon: '🚀',
-    title: 'DevSecOps Implementation',
-    description: 'Security embedded across build, deploy, and runtime stages.',
-    features: [
-      'Infrastructure as Code (Terraform, Helm)',
-      'Container image scanning',
-      'Cluster-level admission policies',
-      'Secure GitHub Actions & Jenkins workflows'
-    ]
-  },
-  {
-    icon: '📊',
-    title: 'Security Reporting & Consultancy',
-    description: 'Detailed assessments with actionable insights for tech and business teams.',
-    features: [
-      'Executive summary with visual dashboards',
-      'Risk-based prioritization',
-      'Compliance mapping (ISO, GDPR)',
-      'Training & awareness sessions'
+      'Manual web and API testing',
+      'Authorization and business logic',
+      'Executive and technical reporting',
+      'Remediation meeting and one defined retest'
     ]
   }
 ];
 
 const About: React.FC = () => {
-  const skillsRef = useRef(null);
-  const skillsInView = useInView(skillsRef, { once: true, margin: '-100px' });
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -508,9 +434,9 @@ const About: React.FC = () => {
   return (
     <PageTransition>
       <SEO
-        title="Vinit Vora - Cybersecurity Consultant & VAPT Engineer | AI-Powered Recon & Security Automation"
-        description="Cybersecurity consultant and VAPT engineer from India specializing in vulnerability assessment, automated reconnaissance, and AI-driven security tooling. Creator of the  CyberCLI — a powerful suite integrating nmap, Amass, ZAP, and more. Helping businesses secure their web apps and APIs with precision and automation."
-        keywords="Vinit Vora, Cybersecurity Consultant, VAPT Engineer, Vulnerability Assessment, Penetration Testing, Security Automation, Recon Tools, AI Security, Bug Bounty, Web Application Security, API Security, OWASP ZAP, nmap, amass, sublist3r, Python Security Tools, Hire Security Consultant, India"
+        title="About Vinit Vora | Application Security Engineer"
+        description="Production application security experience across manual web and API testing, AWS and EKS reviews, security automation, incident response, remediation support, and retesting."
+        keywords="Vinit Vora, Application Security Engineer, API Security, Web Penetration Testing, AWS Security, EKS Security, DevSecOps, Remediation"
         image="https://vinitvora.com/vinit-vora-home.jpg"
         url="https://vinitvora.com"
       />
@@ -526,7 +452,7 @@ const About: React.FC = () => {
               About Me
             </HeroTitle>
             <HeroSubtitle variants={itemVariants}>
-            I'm Vinit Vora, a Security Engineer & VAPT Consultant from Mumbai, India. I help businesses protect their web applications, APIs, and cloud infrastructure by finding vulnerabilities before attackers do saving reputation and revenue.
+            I’m Vinit Vora, an application security engineer in Mumbai. My work focuses on manual web and API testing, authorization and business-logic flaws, AWS and EKS security, and helping developers verify effective fixes.
             </HeroSubtitle>
             
             <AboutImageSection variants={itemVariants}>
@@ -579,7 +505,7 @@ const About: React.FC = () => {
       </TimelineSection>
 
       {/* Skills Section */}
-      <SkillsSection ref={skillsRef}>
+      <SkillsSection>
         <Container>
           <SectionTitle
             initial={{ opacity: 0, y: 30 }}
@@ -603,15 +529,6 @@ const About: React.FC = () => {
               >
                 <SkillName>{skill.name}</SkillName>
                 <SkillDescription>{skill.description}</SkillDescription>
-                <SkillProgressContainer>
-                  <SkillProgressBar
-                    percentage={skill.percentage}
-                    initial={{ width: 0 }}
-                    animate={skillsInView ? { width: `${skill.percentage}%` } : { width: 0 }}
-                    transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
-                  />
-                </SkillProgressContainer>
-                <SkillPercentage>{skill.percentage}%</SkillPercentage>
               </SkillCard>
             ))}
           </SkillsGrid>

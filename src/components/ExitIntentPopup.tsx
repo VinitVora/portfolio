@@ -271,22 +271,22 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onClose }) => {
 
             <IconContainer>👋</IconContainer>
 
-            <Title>Wait! Before You Go...</Title>
+            <Title>Need a focused security assessment?</Title>
 
             <Subtitle>
-              Let’s make your business more secure, before attackers do.
+              Define the scope, authorization, and outcomes before testing begins.
             </Subtitle>
 
             <div style={{ textAlign: "center" }}>
-              <TimerBadge>Book a Free Security Consultation</TimerBadge>
+              <TimerBadge>Discuss an Authorized Assessment</TimerBadge>
             </div>
 
             <OfferList>
-              <li>Full-stack VAPT (Web, API & Cloud)</li>
-              <li>Automated recon & continuous monitoring setup</li>
-              <li>Security tooling with AI-driven insights</li>
-              <li>Cloud infrastructure hardening (AWS, GCP, Azure)</li>
-              <li>Fast, transparent reporting with actionable fixes</li>
+              <li>Manual web and API security testing</li>
+              <li>Authorization and business-logic review</li>
+              <li>Bounded AWS and EKS security review</li>
+              <li>Developer-ready remediation guidance</li>
+              <li>One defined retest when included in scope</li>
             </OfferList>
 
             <ButtonGroup>
@@ -297,7 +297,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onClose }) => {
                 size="lg"
                 onClick={handleClose}
               >
-                Get In Touch
+                Request an Assessment
               </StyledButton>
               <StyledButton
                 as={Link}
@@ -320,7 +320,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onClose }) => {
             >
               <p>📧 contact@vinitvora.com</p>
               <p style={{ marginTop: "var(--spacing-2)" }}>
-                Available for freelance projects
+                Written authorization and an agreed scope are required
               </p>
             </div>
           </PopupContainer>

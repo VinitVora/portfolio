@@ -11,15 +11,14 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Vinit Vora - Security Engineer & VAPT Consultant | Cybersecurity & Cloud Security Specialist',
-  description = 'Vinit Vora is a Security Engineer and VAPT Consultant from Mumbai, India. He helps businesses secure their web applications, APIs, and cloud infrastructure through vulnerability assessments, penetration testing, and automated security solutions. Expertise in AWS Security, Kubernetes, ELK, and DevSecOps.',
-  keywords = 'Vinit Vora, Security Engineer, VAPT Consultant, Penetration Testing, Vulnerability Assessment, Application Security, API Security, Cloud Security, DevSecOps, Cybersecurity Consultant, AWS Security, Kubernetes Security, Web App Pentesting, Hire Security Consultant India',
+  title = 'Vinit Vora | Application Security Engineer',
+  description = 'Application security engineer specializing in manual web and API penetration testing, authorization and business-logic testing, AWS and Kubernetes security, remediation guidance, and retesting.',
+  keywords = 'Vinit Vora, Application Security Engineer, Web Penetration Testing, API Security Testing, Authorization Testing, BOLA, IDOR, Business Logic Security, AWS Security, Kubernetes Security, EKS Security',
   image = 'https://vinitvora.com/vinit-vora-home.jpg',
   url = 'https://vinitvora.com',
   type = 'website'
 }) => {
-  const siteName = 'Vinit Vora | Security Engineer & VAPT Consultant';
-  const twitterHandle = '@vinitvora'; // optional if you make a Twitter/X profile
+  const siteName = 'Vinit Vora | Application Security Engineer';
 
   return (
     <Helmet>
@@ -46,7 +45,6 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
-      <meta property="twitter:creator" content={twitterHandle} />
 
       {/* Additional Meta Tags */}
       <meta name="robots" content="index, follow" />
@@ -67,11 +65,7 @@ const SEO: React.FC<SEOProps> = ({
             'https://github.com/VinitVora',
             'https://www.linkedin.com/in/VinitVora28/'
           ],
-          jobTitle: 'Security Engineer & VAPT Consultant',
-          worksFor: {
-            '@type': 'Organization',
-            name: 'UniAcco'
-          },
+          jobTitle: 'Application Security Engineer',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Mumbai',
@@ -93,59 +87,6 @@ const SEO: React.FC<SEOProps> = ({
         })}
       </script>
 
-      {/* Structured Data (JSON-LD) - Organization Schema */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          '@id': 'https://vinitvora.com/#organization',
-          name: 'Vinit Vora Security Consultancy',
-          alternateName: 'VinitVora.com',
-          url: 'https://vinitvora.com/',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://vinitvora.com/logo512.png',
-            width: 512,
-            height: 512
-          },
-          description:
-            'Independent cybersecurity consultancy by Vinit Vora offering VAPT, web app security audits, and cloud infrastructure assessments for businesses of all sizes.',
-          foundingDate: '2025',
-          founder: {
-            '@type': 'Person',
-            name: 'Vinit Vora'
-          },
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Mumbai',
-            addressRegion: 'Maharashtra',
-            addressCountry: 'IN'
-          },
-          contactPoint: {
-            '@type': 'ContactPoint',
-            email: 'contact@vinitvora.com',
-            contactType: 'Security Consulting',
-            availableLanguage: ['English', 'Hindi']
-          },
-          sameAs: [
-            'https://github.com/VinitVora',
-            'https://www.linkedin.com/in/VinitVora28/'
-          ],
-          areaServed: {
-            '@type': 'Place',
-            name: 'Worldwide'
-          },
-          serviceType: [
-            'Vulnerability Assessment',
-            'Penetration Testing (VAPT)',
-            'Web Application Security',
-            'API Security Testing',
-            'Cloud Security Review',
-            'Kubernetes Security Audit',
-            'DevSecOps Integration'
-          ]
-        })}
-      </script>
     </Helmet>
   );
 };
