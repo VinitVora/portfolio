@@ -9,5 +9,8 @@ http://vinitvora.com/* https://vinitvora.com/:splat 301!
 http://www.vinitvora.com/* https://vinitvora.com/:splat 301!
 http://vinitvora.netlify.app/* https://vinitvora.com/:splat 301!
 
+# Return a real 404 for removed portfolio reports before the SPA fallback.
+/reports/* /404.html 404!
+
 # ⚙️ React router fallback (SPA support)
 /* /index.html 200
