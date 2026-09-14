@@ -467,7 +467,7 @@ const Home: React.FC = () => {
               </LiveTimeDisplay>
 
               <Description variants={itemVariants}>
-                I help product teams find and fix authorization failures, business-logic flaws, and practical security weaknesses in web applications, APIs, AWS, and EKS environments. Every assessment requires written authorization and includes developer-ready remediation guidance.
+                I help businesses secure their web apps, APIs, and cloud infrastructure through deep manual testing, security automation, and scalable VAPT solutions.
               </Description>
 
               <ActionButtons variants={itemVariants}>
