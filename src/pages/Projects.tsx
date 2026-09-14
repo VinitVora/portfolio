@@ -407,7 +407,23 @@ const ModalActions = styled.div`
   flex-wrap: wrap;
 `;
 
-//Project Data
+const CaseStudySection = styled.section`
+  margin-bottom: var(--spacing-6);
+
+  h3 {
+    font-size: var(--text-base);
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-2);
+    letter-spacing: 0.02em;
+  }
+
+  p {
+    color: var(--dark-300);
+    line-height: 1.7;
+  }
+`;
+
+// Case-study data
 const projectsData = [
   // 🌐 Web & API Security
   {
@@ -417,7 +433,15 @@ const projectsData = [
     description:
       "An anonymized production security case study involving missing object-ownership enforcement across authenticated API requests.",
     longDescription:
-      "During authorized production application-security work, I found that authenticated requests could reference objects belonging to another account because authorization checks did not consistently validate ownership. I reproduced the behavior with controlled test accounts, documented the affected permission boundary without retaining real customer data, and worked with developers on centralized server-side ownership checks and negative authorization tests. This is anonymized professional experience, not a freelance-client engagement.",
+      "During authorized production application-security work, I found that authenticated requests could reference objects belonging to another account because authorization checks did not consistently validate ownership. This is anonymized professional experience, not a freelance-client engagement.",
+    context:
+      "A multi-account workflow relied on object identifiers supplied by the client. The review focused on whether the server consistently enforced the requesting account's ownership boundary.",
+    scope:
+      "Authenticated API requests, account-to-account boundary handling, and the authorization decision around record access.",
+    validation:
+      "I used controlled test accounts and the smallest practical request set to confirm the behavior. Evidence was redacted and no real customer data was retained.",
+    remediation:
+      "Recommended centralized server-side ownership checks, explicit deny-by-default behavior, and negative authorization tests that attempt cross-account access.",
     technologies: [
       "Burp Suite",
       "Authorization Testing",
@@ -437,7 +461,15 @@ const projectsData = [
     description:
       "An anonymized production case study showing how concurrent requests could bypass an intended single-execution control.",
     longDescription:
-      "During authorized production application-security work, I identified a time-of-check to time-of-use weakness in a payment-related workflow. Carefully synchronized requests could pass the same precondition before state was updated. I validated the issue with controlled accounts and a minimal request set, stopped before causing financial impact, and recommended an atomic server-side control with idempotency and concurrency-focused regression tests. This is anonymized professional experience, not a freelance-client engagement.",
+      "During authorized production application-security work, I identified a time-of-check to time-of-use weakness in a payment-related workflow. Carefully synchronized requests could pass the same precondition before state was updated. This is anonymized professional experience, not a freelance-client engagement.",
+    context:
+      "A state-changing workflow was expected to execute once per eligible action. The review assessed whether concurrent requests could observe and act on the same precondition.",
+    scope:
+      "The workflow's server-side state transition, duplicate-request handling, and safeguards designed to prevent repeated execution.",
+    validation:
+      "I used controlled accounts and carefully limited concurrent requests to demonstrate the race safely, then stopped before creating financial impact.",
+    remediation:
+      "Recommended an atomic server-side control, idempotency protection, and concurrency-focused regression tests before retesting the corrected workflow.",
     technologies: [
       "Burp Suite Pro",
       "Concurrency Testing",
@@ -529,6 +561,26 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
 
           <ModalDescription>{project.longDescription}</ModalDescription>
+
+          <CaseStudySection>
+            <h3>Context</h3>
+            <p>{project.context}</p>
+          </CaseStudySection>
+
+          <CaseStudySection>
+            <h3>Assessment scope</h3>
+            <p>{project.scope}</p>
+          </CaseStudySection>
+
+          <CaseStudySection>
+            <h3>Manual validation</h3>
+            <p>{project.validation}</p>
+          </CaseStudySection>
+
+          <CaseStudySection>
+            <h3>Remediation approach</h3>
+            <p>{project.remediation}</p>
+          </CaseStudySection>
 
           <div style={{ marginBottom: "var(--spacing-6)" }}>
             <h4
