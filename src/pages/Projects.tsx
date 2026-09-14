@@ -657,6 +657,15 @@ const Projects: React.FC = () => {
               evidence handling, developer remediation support, and retesting.
             </HeroSubtitle>
 
+            <motion.div
+              variants={itemVariants}
+              style={{ marginBottom: "var(--spacing-10)" }}
+            >
+              <Button as="a" href="/sample-report" variant="outline">
+                View a Sanitized Sample Report
+              </Button>
+            </motion.div>
+
             <FilterSection variants={itemVariants}>
               {categories.map((category) => (
                 <FilterButton
