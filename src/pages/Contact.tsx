@@ -289,6 +289,7 @@ interface FormData {
   email: string;
   subject: string;
   message: string;
+  botField: string;
 }
 
 interface FormErrors {
@@ -304,6 +305,7 @@ const Contact: React.FC = () => {
     email: "",
     subject: "",
     message: "",
+    botField: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -366,27 +368,25 @@ const Contact: React.FC = () => {
     setSubmitError("");
 
     try {
-      // Create form data in the format Netlify expects
-      const formDataToSubmit = new URLSearchParams();
-      formDataToSubmit.append("form-name", "contact");
-      formDataToSubmit.append("name", formData.name);
-      formDataToSubmit.append("email", formData.email);
-      formDataToSubmit.append("subject", formData.subject);
-      formDataToSubmit.append("message", formData.message);
-
-      // Submit to Netlify Forms
-      const response = await fetch("/", {
+      const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formDataToSubmit.toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         console.log("Form submitted successfully");
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          botField: "",
+        });
       } else {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const result = await response.json().catch(() => ({}));
+        throw new Error(result.error || `HTTP error! status: ${response.status}`);
       }
     } catch (error) {
       console.error("Form submission failed:", error);
@@ -489,7 +489,12 @@ const Contact: React.FC = () => {
                   <input type="hidden" name="form-name" value="contact" />
                   <p hidden>
                     <label>
-                      Don't fill this out: <input name="bot-field" />
+                      Don't fill this out:{" "}
+                      <input
+                        name="botField"
+                        value={formData.botField}
+                        onChange={handleInputChange}
+                      />
                     </label>
                   </p>
 

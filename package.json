@@ -26,6 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test:contact": "node --test netlify/functions/contact.test.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
