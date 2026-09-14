@@ -126,7 +126,9 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     font-size: 16px;
     overflow-x: hidden;
+    overflow-y: auto;
     scroll-padding-top: 80px;
+    touch-action: pan-y;
   }
 
   body {
@@ -135,10 +137,12 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--dark-100);
     line-height: 1.6;
     overflow-x: hidden;
+    overflow-y: visible;
     min-height: 100vh;
     position: relative;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior: none;
+    overscroll-behavior-y: auto;
+    touch-action: pan-y;
   }
   /* Custom Scrollbar - Minimal */
   ::-webkit-scrollbar {
