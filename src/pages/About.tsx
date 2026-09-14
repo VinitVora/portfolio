@@ -133,13 +133,14 @@ const TimelineItem = styled(motion.div)<{ index: number }>`
   position: relative;
   margin-bottom: var(--spacing-12);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: ${props => props.index % 2 === 0 ? 'flex-start' : 'flex-end'};
+  padding-top: 64px;
 
   @media (max-width: 768px) {
     justify-content: flex-start;
     padding-left: 80px;
-    padding-top: var(--spacing-8);
+    padding-top: var(--spacing-12);
   }
 `;
 
@@ -175,7 +176,7 @@ const TimelineContent = styled(Card)<{ direction: 'left' | 'right' }>`
 const TimelineDate = styled.div`
   position: absolute;
   left: 50%;
-  top: 15px;
+  top: 0;
   transform: translateX(-50%);
   background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   color: var(--dark-950);
@@ -344,16 +345,10 @@ const ServiceFeatures = styled.ul`
 // Data
 const timelineData = [
   {
-    year: 'May 2025 - Present',
+    year: 'Nov 2024 - Present',
     title: 'Application security in production',
-    description: 'Application security work spanning web and API testing, AWS and EKS reviews, security automation, incident response, and developer remediation support.',
-    category: 'Work Experience'
-  },
-  {
-    year: 'Nov 2024 - Apr 2025',
-    title: 'Cybersecurity internship',
-    description: 'Hands-on work in vulnerability assessment, application security, and security operations in a professional environment.',
-    category: 'Internships'
+    description: 'Progressed from a cybersecurity internship into a full-time security engineering role, with work spanning web and API testing, AWS and EKS reviews, security automation, incident response, and developer remediation support.',
+    category: 'Professional Experience'
   },
   {
     year: 'May 2024 - Jul 2024',
