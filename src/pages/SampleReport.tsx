@@ -24,6 +24,10 @@ const Lead = styled.p`
   color: var(--dark-300);
 `;
 
+const DownloadAction = styled.div`
+  margin-top: var(--spacing-6);
+`;
+
 const Notice = styled(Card)`
   border-color: rgba(245, 158, 11, 0.5);
   background: rgba(245, 158, 11, 0.08);
@@ -111,6 +115,16 @@ const SampleReport: React.FC = () => (
           framing, and remediation guidance a client can expect from a focused
           web application and API (application programming interface) security assessment.
         </Lead>
+        <DownloadAction>
+          <Button
+            as="a"
+            href="/reports/Vinit_Vora_Sample_Web_API_Penetration_Test_Report.pdf"
+            download
+            variant="primary"
+          >
+            Download the 15-Page Sample Report (PDF)
+          </Button>
+        </DownloadAction>
       </Container>
     </Hero>
 
@@ -119,8 +133,9 @@ const SampleReport: React.FC = () => (
         <Report>
           <Notice>
             <strong>Important:</strong> This is a fictional demonstration, not a
-            client report and not a reproduction of a production finding. Names,
-            systems, evidence, values, and screenshots are deliberately omitted.
+            client report and not a reproduction of a production finding. The
+            downloadable PDF uses fictional names, reserved example domains,
+            synthetic evidence, and redacted values throughout.
           </Notice>
 
           <ReportSection>
@@ -191,6 +206,15 @@ const SampleReport: React.FC = () => (
               <li>Defined retest results and final status.</li>
             </ul>
             <div style={{ marginTop: "var(--spacing-6)" }}>
+              <Button
+                as="a"
+                href="/reports/Vinit_Vora_Sample_Web_API_Penetration_Test_Report.pdf"
+                download
+                variant="secondary"
+                style={{ marginRight: "var(--spacing-3)" }}
+              >
+                Download Sample Report
+              </Button>
               <Button as="a" href="/contact" variant="primary">Request a Security Assessment</Button>
             </div>
           </Card>
