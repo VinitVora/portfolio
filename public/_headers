@@ -5,7 +5,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
-/reports/Vinit_Vora_Sample_Web_API_Penetration_Test_Report.pdf
+/reports/Sample_Penetration_Test_Report.pdf
   Content-Type: application/pdf
-  Content-Disposition: attachment; filename="Vinit_Vora_Sample_Web_API_Penetration_Test_Report.pdf"
+  Content-Disposition: attachment; filename="Sample_Penetration_Test_Report.pdf"
   X-Content-Type-Options: nosniff

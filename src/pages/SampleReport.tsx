@@ -118,11 +118,11 @@ const SampleReport: React.FC = () => (
         <DownloadAction>
           <Button
             as="a"
-            href="/reports/Vinit_Vora_Sample_Web_API_Penetration_Test_Report.pdf"
+            href="/reports/Sample_Penetration_Test_Report.pdf"
             download
             variant="primary"
           >
-            Download the 15-Page Sample Report (PDF)
+            Download a Sample Pentest Report
           </Button>
         </DownloadAction>
       </Container>
@@ -208,12 +208,12 @@ const SampleReport: React.FC = () => (
             <div style={{ marginTop: "var(--spacing-6)" }}>
               <Button
                 as="a"
-                href="/reports/Vinit_Vora_Sample_Web_API_Penetration_Test_Report.pdf"
+                href="/reports/Sample_Penetration_Test_Report.pdf"
                 download
                 variant="secondary"
                 style={{ marginRight: "var(--spacing-3)" }}
               >
-                Download Sample Report
+                Download a Sample Pentest Report
               </Button>
               <Button as="a" href="/contact" variant="primary">Request a Security Assessment</Button>
             </div>

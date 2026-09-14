@@ -46,7 +46,7 @@ const Disclosure = styled.p`
   line-height: 1.65;
 `;
 
-const ReportLink = styled.a`
+const ReportLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -230,11 +230,8 @@ const Projects: React.FC = () => {
             freelance-client engagements. Sensitive identities, systems,
             customer information and exploit-ready details have been removed.
           </Disclosure>
-          <ReportLink
-            href="/reports/Vinit_Vora_Sample_Web_API_Penetration_Test_Report.pdf"
-            download
-          >
-            Download the Sanitized Sample Report (PDF)
+          <ReportLink to="/sample-report">
+            View a Sample Pentest Report
           </ReportLink>
 
           <Controls>
