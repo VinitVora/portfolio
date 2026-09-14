@@ -15,6 +15,7 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Contact = lazy(() => import('./pages/Contact'));
+const SampleReport = lazy(() => import('./pages/SampleReport'));
 const NotFound = lazy(() => import('./pages/NotFound')); // ✅ new
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/case-studies" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/sample-report" element={<SampleReport />} />
 
             {/* ✅ Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />
