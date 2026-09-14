@@ -431,10 +431,7 @@ export const injectScrollOptimizations = () => {
   const style = document.createElement('style');
   style.textContent = `
     /* Scroll performance optimizations */
-    .is-scrolling {
-      pointer-events: none;
-    }
-    
+    /* Never disable pointer input while scrolling: it breaks trackpad and wheel interaction. */
     .is-scrolling * {
       animation-play-state: paused !important;
     }
