@@ -58,10 +58,7 @@ Your enquiry has been received.
 
 Request subject: ${subject}
 
-What happens next:
-1. I review the details you submitted.
-2. I will respond within one business day with the appropriate next step.
-3. Before any security testing begins, we agree written authorization and scope.
+Your enquiry is now in review. Any follow-up, recommended next step, or request for additional information will be shared in the reply.
 
 Please do not reply with credentials, production data, or detailed vulnerability evidence by ordinary email.
 
@@ -82,7 +79,7 @@ https://vinitvora.com`,
                 <td valign="middle">
                   <img src="https://vinitvora.com/brand-mark.svg" width="180" height="48" alt="&lt;/&gt; V.V — Vinit Vora" style="display:block;border:0;outline:none;text-decoration:none;max-width:180px;height:auto;" />
                 </td>
-                <td align="right" valign="middle" style="font-size:11px;line-height:16px;letter-spacing:1.2px;color:#b7c9cd;text-transform:uppercase;">Application<br/>Security</td>
+                <td align="right" valign="middle" style="font-size:11px;line-height:16px;letter-spacing:1.2px;color:#b7c9cd;text-transform:uppercase;white-space:nowrap;">Application Security</td>
               </tr>
             </table>
           </td></tr>
@@ -96,12 +93,7 @@ https://vinitvora.com`,
                 <p style="margin:0;font-size:15px;line-height:22px;font-weight:700;color:#20343a;">${safeSubject}</p>
               </td></tr>
             </table>
-            <h2 style="margin:0 0 12px;font-size:17px;line-height:24px;color:#173642;">What happens next</h2>
-            <ol style="margin:0 0 24px;padding-left:20px;font-size:15px;line-height:24px;color:#40545a;">
-              <li style="margin-bottom:5px;">I review the details you submitted.</li>
-              <li style="margin-bottom:5px;">I respond with the appropriate next step.</li>
-              <li>Security testing begins only after written authorization and an agreed scope.</li>
-            </ol>
+            <p style="margin:0 0 24px;font-size:15px;line-height:24px;color:#40545a;">Your enquiry is now in review. Any follow-up, recommended next step, or request for additional information will be shared in the reply.</p>
             <p style="margin:0;font-size:14px;line-height:22px;color:#40545a;">Regards,<br/><strong style="color:#173642;">Vinit Vora</strong><br/>Application Security Engineer<br/><a href="https://vinitvora.com" style="color:#0f766e;text-decoration:none;">vinitvora.com</a></p>
           </td></tr>
           <tr><td style="padding:18px 36px;background:#f7f9f9;border-top:1px solid #dce5e7;">
